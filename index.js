@@ -28,31 +28,25 @@ function playRound () {
         return "That's not a valid option, silly!";
     }
 
+    else if (computerChoice === "Rock" && playerChoice === "Paper" || computerChoice === "Paper" && playerChoice === "Scissors" || computerChoice === "Scissors" && playerChoice === "Rock") {
+        return "You win!";
+    }
+
     else {
-        switch (computerChoice, playerChoice) {
-            case "Rock", "Paper":
-                return "You win!";
-            break;
-            case "Rock", "Scissors":
-                return "You lose!";
-            break;
-            case "Paper", "Rock":
-                return "You lose!";
-            break;
-            case "Paper", "Scissors":
-                return "You win!";
-            break;
-            case "Scissors", "Rock":
-                return "You win!";
-            break;
-            case "Scissors", "Paper":
-                return "You lose!";
-            break;
-            default:
-                return "oops"
-            break;
-        }
+        return "You lose!";
     }
 }
 
+let i = 0;
+let j = 0;
+
+//function game () {
+//    while (i < 6 || j < 6) {
+//        console.log(playRound());
+//        console.log("Your score: " + i);
+//        console.log("CPU score: " + j);
+//    }
+//}
 console.log(playRound());
+console.log(i);
+console.log(j);
