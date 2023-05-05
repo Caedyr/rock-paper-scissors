@@ -9,13 +9,14 @@ function getComputerChoice () {
 }
 // Request a user selection
 // Send the user an input request for Rock, Paper or Scissors.
-    const input = prompt("Choose Rock, Paper or Scissors!");
-    const playerChoice = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
 // Compare the two selections
-// Take the ComputerChoice and PlayerSelection. Compare the two - If they are ===, its a tie.
+// Take the computerChoice and playerChoice. Compare the two - If they are ===, its a tie.
 // Rock beats scissors, scissors beats paper, paper beats rock.
 function playRound () {
     let computerChoice = getComputerChoice();
+    const input = prompt("Choose Rock, Paper or Scissors!");
+    const playerChoice = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+
     console.log(playerChoice);
     console.log(computerChoice);
     console.log(typeof(playerChoice));
@@ -29,10 +30,12 @@ function playRound () {
     }
 
     else if (computerChoice === "Rock" && playerChoice === "Paper" || computerChoice === "Paper" && playerChoice === "Scissors" || computerChoice === "Scissors" && playerChoice === "Rock") {
+        i++;
         return "You win!";
     }
 
     else {
+        j++;
         return "You lose!";
     }
 }
@@ -40,13 +43,36 @@ function playRound () {
 let i = 0;
 let j = 0;
 
-//function game () {
-//    while (i < 6 || j < 6) {
-//        console.log(playRound());
-//        console.log("Your score: " + i);
-//        console.log("CPU score: " + j);
-//    }
-//}
-console.log(playRound());
-console.log(i);
-console.log(j);
+function game () {
+    console.log(playRound());
+    console.log("Your score: " + i);
+    console.log("CPU score: " + j);
+
+    console.log(playRound());
+    console.log("Your score: " + i);
+    console.log("CPU score: " + j);
+
+    console.log(playRound());
+    console.log("Your score: " + i);
+    console.log("CPU score: " + j);
+
+    console.log(playRound());
+    console.log("Your score: " + i);
+    console.log("CPU score: " + j);
+
+    console.log(playRound());
+    console.log("Your score: " + i);
+    console.log("CPU score: " + j);
+ }
+
+console.log(game());
+
+if (i > j) {
+    console.log("You win!");
+}
+else if (i < j) {
+    console.log("You lose...");
+}
+else {
+    console.log("Draw game!");
+}
